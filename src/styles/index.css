@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-accent: var(--color-accent);
+}
+
+@layer base {
+  :root {
+    /* Deep Space (default) */
+    --color-primary: #5B8CFF;
+    --color-background: #060B17;
+    --color-surface: #0E1629;
+    --color-accent: #8AB4FF;
+  }
+
+  [data-theme='purple-nebula'] {
+    --color-primary: #9D6CFF;
+    --color-background: #090611;
+    --color-surface: #141124;
+    --color-accent: none; /* Provide default or derived if missing, spec doesn't say. Let's make it slightly lighter */
+  }
+
+  [data-theme='aurora'] {
+    --color-primary: #5BE7C4;
+    --color-background: #041512;
+    --color-surface: #0B201D;
+  }
+
+  [data-theme='solar-eclipse'] {
+    --color-primary: #F7C948;
+    --color-background: #0C0A08;
+    --color-surface: #1B1610;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
